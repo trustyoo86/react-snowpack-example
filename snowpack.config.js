@@ -1,3 +1,5 @@
+const { PATHS } = require('./app-config');
+
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
@@ -14,8 +16,11 @@ module.exports = {
   installOptions: {
     /* ... */
   },
+  /**
+   * development options
+   */
   devOptions: {
-    /* ... */
+    port: 4000,
   },
   buildOptions: {
     /* ... */
@@ -23,7 +28,11 @@ module.exports = {
   proxy: {
     /* ... */
   },
+  /**
+   * module resolve alias
+   */
   alias: {
-    /* ... */
+    '@components': PATHS.COMPONENTS,
+    '@pages': PATHS.PAGES,
   },
 };
