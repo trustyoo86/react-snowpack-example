@@ -1,12 +1,14 @@
 import React from 'react';
 import Routes from './Routes';
 
+// components
+import Layout from '@components/Layout';
+
 const App = () => {
   return (
-    <div>
-      <div>Head</div>
+    <Layout>
       <Routes />
-    </div>
+    </Layout>
   );
 };
 

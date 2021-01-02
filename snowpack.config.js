@@ -7,8 +7,11 @@ module.exports = {
     public: '/',
     src: '/dist',
   },
+  /**
+   * snowpack plugins
+   */
   plugins: [
-    /* ... */
+    'snowpack-plugin-sass',
   ],
   install: [
     /* ... */
