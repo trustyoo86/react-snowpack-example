@@ -1,8 +1,10 @@
 import React from 'react';
-import Routes from './Routes';
 
 // components
 import Layout from '@components/Layout';
+
+// Rotues
+import Routes from './Routes';
 
 const App = () => {
   return (

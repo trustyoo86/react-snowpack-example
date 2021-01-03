@@ -9,4 +9,6 @@ exports.PATHS = {
   SRC,
   COMPONENTS: resolve(SRC, 'components'),
   PAGES: resolve(SRC, 'pages'),
+  ATOMS: resolve(SRC, 'atoms'),
+  SELECTORS: resolve(SRC, 'selectors'),
 };

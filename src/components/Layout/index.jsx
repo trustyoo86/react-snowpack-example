@@ -4,7 +4,7 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 
 const { Header, Content, Footer } = Layout;
 
-import './layout.scss';
+import styles from './layout.module.css';
 
 const PageLayout = ({ children }) => {
   return (
@@ -15,11 +15,18 @@ const PageLayout = ({ children }) => {
           <Menu.Item key="1">Home</Menu.Item>
         </Menu>
       </Header>
-      <Content className="site-layout-container">
-        <div className="site-layout-content">
+      <Content className={styles.container}>
+        <Breadcrumb style={{ margin: '16px 0' }}>
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>List</Breadcrumb.Item>
+        </Breadcrumb>
+        <div className={styles.content}>
           {children}
         </div>
       </Content>
+      <Footer>
+        github recoil test
+      </Footer>
     </Layout>
   );
 };
