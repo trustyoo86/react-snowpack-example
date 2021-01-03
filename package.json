@@ -16,6 +16,6 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "snowpack-plugin-sass": "^1.0.1"
+    "recoil": "^0.1.2"
   }
 }

@@ -1,8 +1,8 @@
-.site-layout-container {
+.container {
   padding: 0 50px;
 }
 
-.site-layout-content {
+.content {
   min-height: 280px;
   padding: 24px;
   background-color: #fff;

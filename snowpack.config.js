@@ -7,11 +7,10 @@ module.exports = {
     public: '/',
     src: '/dist',
   },
-  /**
-   * snowpack plugins
-   */
   plugins: [
-    'snowpack-plugin-sass',
+    /**
+     * snowpack plugins
+     */
   ],
   install: [
     /* ... */
@@ -37,5 +36,7 @@ module.exports = {
   alias: {
     '@components': PATHS.COMPONENTS,
     '@pages': PATHS.PAGES,
+    '@atoms': PATHS.ATOMS,
+    '@selectors': PATHS.SELECTORS,
   },
 };
