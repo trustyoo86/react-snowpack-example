@@ -8,7 +8,9 @@ module.exports = {
     src: '/dist',
   },
   plugins: [
-    /* ... */
+    /**
+     * snowpack plugins
+     */
   ],
   install: [
     /* ... */
@@ -34,5 +36,7 @@ module.exports = {
   alias: {
     '@components': PATHS.COMPONENTS,
     '@pages': PATHS.PAGES,
+    '@atoms': PATHS.ATOMS,
+    '@selectors': PATHS.SELECTORS,
   },
 };
