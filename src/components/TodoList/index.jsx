@@ -1,15 +1,15 @@
 import React from 'react';
 import { List } from 'antd';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 // components
 import Item from './Item';
 
 // atoms
-import { todoListState } from '@atoms/todo/todoList';
+import { filteredTodoListState } from '@selectors/todo/todoSelector';
 
 const TodoList = () => {
-  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const todoList = useRecoilValue(filteredTodoListState);
 
   return (
     <List

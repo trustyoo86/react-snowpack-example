@@ -27,6 +27,7 @@ const TodoItemCreator = () => {
         },
       ];
     });
+
     setInputValue('');
   };
 
@@ -41,7 +42,7 @@ const TodoItemCreator = () => {
         <Form.Item
           label="할일 입력"
           name="todo">
-          <Input onChange={onChange} />
+          <Input type="text" onChange={onChange} value={inputValue} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" onClick={addItem}>
