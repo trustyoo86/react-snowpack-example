@@ -11,4 +11,5 @@ exports.PATHS = {
   PAGES: resolve(SRC, 'pages'),
   ATOMS: resolve(SRC, 'atoms'),
   SELECTORS: resolve(SRC, 'selectors'),
+  HOOKS: resolve(SRC, 'hooks'),
 };
