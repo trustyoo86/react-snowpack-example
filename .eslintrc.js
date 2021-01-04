@@ -38,6 +38,8 @@ module.exports = {
     'window': false,
     'XMLHttpRequest': false,
     'globalThis': false,
+    'test': false,
+    'expect': false,
   },
   'rules': {
     'camelcase': ['error', { 'properties': 'always' }],
