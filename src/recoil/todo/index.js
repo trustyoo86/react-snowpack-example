@@ -47,3 +47,92 @@ export const todoListStatsState = selector({
     };
   },
 });
+
+// ---------------------recoil 작성 방법 고려 방안 --------------------------
+
+// 1안 - subFix 로 XXXAtomState, XXXSelectorState or XXXAtom, XXXSelector 붙여서 사용
+
+/*export const todoListFilterAtomState = atom({
+  key: 'todoListFilterState',
+  default: 'Show All',
+});
+
+export const filteredTodoListSelectorState = selector({
+  key: 'filteredTodoListState',
+  get: ({ get }) => {
+    const filter = get(todoListFilterState);
+    const list = get(todoListState);
+
+    switch (filter) {
+      case 'Show completed':
+        return list.filter(item => item.isComplete);
+      case 'Show Uncompleted':
+        return list.filter(item => !item.isComplete);
+      default:
+        return list;
+    }
+  },
+  set: ({ set }, data) => {
+    set(todoListState, data);
+  },
+});*/
+
+// 2안 obj 로 관리 후 state subfix 붙이기 동일. 추후 XXXFamily 등 확장해도 사용 편리?...
+// 단 컴포넌트 사용시 혼돈 방지를 위해 디스트럭처링 하지말고 바로 사용하도록..
+
+
+/*
+const todo = {
+  atom: {
+    todoListState: atom({
+      key: 'todoListState',
+      default: [],
+    }),
+    todoListFilterState: atom({
+      key: 'todoListFilterState',
+      default: 'Show All',
+    }),
+  },
+  selector: {
+    filteredTodoListState: selector({
+      key: 'filteredTodoListState',
+      get: ({ get }) => {
+        const filter = get(todoListFilterState);
+        const list = get(todoListState);
+
+        switch (filter) {
+          case 'Show completed':
+            return list.filter(item => item.isComplete);
+          case 'Show Uncompleted':
+            return list.filter(item => !item.isComplete);
+          default:
+            return list;
+        }
+      },
+      set: ({ set }, data) => {
+        set(todoListState, data);
+      },
+    }),
+    todoListStatsState: selector({
+      key: 'todoListStatsState',
+      get: ({ get }) => {
+        const todoList = get(todoListState);
+        const totalNum = todoList.length;
+        const totalCompletedNum = todoList.filter(item => item.isComplete).length;
+        const totalUncompletedNum = totalNum - totalCompletedNum;
+        const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum * 100;
+
+        return {
+          totalNum,
+          totalCompletedNum,
+          totalUncompletedNum,
+          percentCompleted,
+        };
+      },
+    }),
+  },
+};
+
+const value = useRecoilValue(todo.atom.todoListState);
+*/
+
