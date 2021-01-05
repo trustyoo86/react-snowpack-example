@@ -2,7 +2,7 @@ import React from 'react';
 import { useRecoilValue } from 'recoil';
 
 // selector
-import { todoListStatsState } from '@selectors/todo/todoSelector';
+import { todoListStatsState } from '@recoil/todo';
 
 const TodoListStats = () => {
   const {

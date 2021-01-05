@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { Alert, Form, Input, Button } from 'antd';
 
-import { todoListState } from '@atoms/todo/todoList';
+import { todoListState } from '@recoil/todo';
 
 const TodoItemCreator = () => {
   const [inputValue, setInputValue] = useState('');
