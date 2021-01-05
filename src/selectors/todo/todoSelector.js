@@ -18,6 +18,9 @@ export const filteredTodoListState = selector({
         return list;
     }
   },
+  set: ({ set }, data) => {
+    set(todoListState, data);
+  },
 });
 
 export const todoListStatsState = selector({

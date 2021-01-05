@@ -1,8 +1,15 @@
 {
+  "name": "react-snowpack-example",
+  "version": "0.0.1",
+  "description": "react snowpack + recoil example",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trustyoo86/react-snowpack-example.git"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.8",
