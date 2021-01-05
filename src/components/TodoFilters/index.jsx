@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from 'antd';
 import { useRecoilState } from 'recoil';
 
-import { todoListFilterState } from '@atoms/todo/todoList';
+import { todoListFilterState } from '@recoil/todo';
 
 const { Option } = Select;
 

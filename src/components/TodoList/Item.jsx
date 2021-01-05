@@ -4,7 +4,7 @@ import { useRecoilValue, useRecoilState } from 'recoil';
 import { List, Input, Checkbox, Button } from 'antd';
 
 // atoms
-import { filteredTodoListState } from '@selectors/todo/todoSelector';
+import { filteredTodoListState } from '@recoil/todo';
 
 const TodoItem = ({ item }) => {
   const [todoList, setTodoList] = useRecoilState(filteredTodoListState);
@@ -32,7 +32,7 @@ const TodoItem = ({ item }) => {
 
   return (
     <List.Item>
-      <Checkbox 
+      <Checkbox
         checked={item.isComplete}
         onChange={toggleItemCompletion} />
       <Input

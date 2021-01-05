@@ -6,7 +6,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import Item from './Item';
 
 // atoms
-import { filteredTodoListState } from '@selectors/todo/todoSelector';
+import { filteredTodoListState } from '@recoil/todo';
 
 const TodoList = () => {
   const todoList = useRecoilValue(filteredTodoListState);

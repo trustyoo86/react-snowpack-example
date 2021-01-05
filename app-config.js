@@ -9,7 +9,7 @@ exports.PATHS = {
   SRC,
   COMPONENTS: resolve(SRC, 'components'),
   PAGES: resolve(SRC, 'pages'),
-  ATOMS: resolve(SRC, 'atoms'),
+  RECOIL: resolve(SRC, 'recoil'),
   SELECTORS: resolve(SRC, 'selectors'),
   HOOKS: resolve(SRC, 'hooks'),
 };

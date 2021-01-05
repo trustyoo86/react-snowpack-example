@@ -69,8 +69,7 @@ module.exports = {
   alias: {
     '@components': PATHS.COMPONENTS,
     '@pages': PATHS.PAGES,
-    '@atoms': PATHS.ATOMS,
-    '@selectors': PATHS.SELECTORS,
+    '@recoil': PATHS.RECOIL,
     '@hooks': PATHS.HOOKS,
   },
   /**
