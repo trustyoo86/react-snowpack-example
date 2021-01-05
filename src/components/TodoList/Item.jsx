@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import { List, Input, Checkbox, Button } from 'antd';
 
 // atoms
 import { filteredTodoListState } from '@selectors/todo/todoSelector';
 
 const TodoItem = ({ item }) => {
-  const todoList = useRecoilValue(filteredTodoListState);
+  const [todoList, setTodoList] = useRecoilState(filteredTodoListState);
   const index = todoList.findIndex(listItem => listItem === item);
 
   const editItemText = ({ target: { value } }) => {
@@ -22,6 +22,8 @@ const TodoItem = ({ item }) => {
       ...item,
       isComplete: !item.isComplete,
     });
+
+    setTodoList(newList);
   };
 
   const deleteItem = () => {
