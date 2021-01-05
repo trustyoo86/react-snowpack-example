@@ -136,3 +136,65 @@ const todo = {
 const value = useRecoilValue(todo.atom.todoListState);
 */
 
+/**
+ * ===== 방안3 이것도 한번 봐주세영!!
+ * atoms, selectors를 나누었어요 지금보니 하나로 몰았을때, object 형태로 한꺼번에 import 될것을 대비하여 ㅎ
+ * 각 atoms, selectors를 destructuring 합니다
+ * 이렇게 하면, 각 항목들을 확인할 수 있고, key의 경우 prefix를 두고 segment로 unique 키를 놓으면 괜찮지 않을까요? :)
+ * 
+  const PREFIX = 'TODO';
+
+  export const atoms = {
+    list: atom({
+      key: `${PREFIX}/atom/list`,
+      default: [],
+    }),
+    filter: atom({
+      key: `${PREFIX}/atom/filter`,
+      default: 'Show All',
+    }),
+  };
+
+  export const selectors = {
+    filtered: selector({
+      key: `${PREFIX}/selector/filtered`,
+      get: ({ get }) => {
+        const filter = get(todoListFilterState);
+        const list = get(todoListState);
+    
+        switch (filter) {
+          case 'Show completed':
+            return list.filter(item => item.isComplete);
+          case 'Show Uncompleted':
+            return list.filter(item => !item.isComplete);
+          default:
+            return list;
+        }
+      },
+      set: ({ set }, data) => {
+        set(todoListState, data);
+      },
+    }),
+    stats: selector({
+      key: `${PREFIX}/selector/stats`,
+      get: ({ get }) => {
+        const todoList = get(todoListState);
+        const totalNum = todoList.length;
+        const totalCompletedNum = todoList.filter(item => item.isComplete).length;
+        const totalUncompletedNum = totalNum - totalCompletedNum;
+        const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum * 100;
+    
+        return {
+          totalNum,
+          totalCompletedNum,
+          totalUncompletedNum,
+          percentCompleted,
+        };
+      },
+    }),
+  };
+
+  import { atoms, selectors } from '@recoil/todo';
+
+  const list = useRecoilState(atoms.list);
+ */
