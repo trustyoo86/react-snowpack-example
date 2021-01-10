@@ -12,4 +12,5 @@ exports.PATHS = {
   RECOIL: resolve(SRC, 'recoil'),
   SELECTORS: resolve(SRC, 'selectors'),
   HOOKS: resolve(SRC, 'hooks'),
+  HOC: resolve(SRC, 'hoc'),
 };
