@@ -1,6 +1,5 @@
 import React from 'react';
 import { PageHeader } from 'antd';
-import { RecoilRoot } from 'recoil';
 
 // components
 import TodoListStats from '@components/TodoListStats';
@@ -10,7 +9,7 @@ import TodoList from '@components/TodoList';
 
 const Todo = () => {
   return (
-    <RecoilRoot>
+    <>
       <PageHeader
         title="Todo"
         subTitle="Todo list using Recoiljs"
@@ -25,7 +24,7 @@ const Todo = () => {
         {/* list */}
         <TodoList />
       </div>
-    </RecoilRoot>
+    </>
   );
 };
 
