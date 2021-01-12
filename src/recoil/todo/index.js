@@ -141,7 +141,7 @@ const value = useRecoilValue(todo.atom.todoListState);
  * atoms, selectors를 나누었어요 지금보니 하나로 몰았을때, object 형태로 한꺼번에 import 될것을 대비하여 ㅎ
  * 각 atoms, selectors를 destructuring 합니다
  * 이렇게 하면, 각 항목들을 확인할 수 있고, key의 경우 prefix를 두고 segment로 unique 키를 놓으면 괜찮지 않을까요? :)
- * 
+ *
   const PREFIX = 'TODO';
 
   export const atoms = {
@@ -161,7 +161,7 @@ const value = useRecoilValue(todo.atom.todoListState);
       get: ({ get }) => {
         const filter = get(todoListFilterState);
         const list = get(todoListState);
-    
+
         switch (filter) {
           case 'Show completed':
             return list.filter(item => item.isComplete);
@@ -183,7 +183,7 @@ const value = useRecoilValue(todo.atom.todoListState);
         const totalCompletedNum = todoList.filter(item => item.isComplete).length;
         const totalUncompletedNum = totalNum - totalCompletedNum;
         const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum * 100;
-    
+
         return {
           totalNum,
           totalCompletedNum,

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '@pages/Home';
 import Profile from '@pages/Profile';
 import Todo from '@pages/Todo';
+import GithubStar from '@pages/GithubStar';
 
 const Routes = () => {
   return (
@@ -14,6 +15,9 @@ const Routes = () => {
         </Route>
         <Route path="/todo">
           <Todo />
+        </Route>
+        <Route path="/githubStar">
+          <GithubStar />
         </Route>
         <Route path="/">
           <Home />

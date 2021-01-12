@@ -71,6 +71,7 @@ module.exports = {
     '@pages': PATHS.PAGES,
     '@recoil': PATHS.RECOIL,
     '@hooks': PATHS.HOOKS,
+    '@hoc': PATHS.HOC,
   },
   /**
    * test options
