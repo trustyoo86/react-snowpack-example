@@ -7,6 +7,7 @@ const SRC = resolve(ROOT, 'src');
 
 exports.PATHS = {
   SRC,
+  ATOMS: resolve(SRC, 'atoms'),
   COMPONENTS: resolve(SRC, 'components'),
   PAGES: resolve(SRC, 'pages'),
   RECOIL: resolve(SRC, 'recoil'),

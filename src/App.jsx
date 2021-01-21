@@ -1,4 +1,3 @@
-import React from 'react';
 import { RecoilRoot } from 'recoil';
 // components
 import Layout from '@components/Layout';

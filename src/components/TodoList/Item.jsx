@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { List, Input, Checkbox, Button } from 'antd';
@@ -55,4 +55,4 @@ function removeItemAtIndex(arr, index) {
   return [...arr.slice(0, index), ...arr.slice(index + 1)];
 }
 
-export default React.memo(TodoItem);
+export default memo(TodoItem);

@@ -30,6 +30,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@snowpack/app-scripts-react": "^1.12.6",
+    "@snowpack/plugin-babel": "^2.1.6",
     "antd": "^4.9.4",
     "eslint": "^7.16.0",
     "eslint-plugin-react": "^7.22.0",
