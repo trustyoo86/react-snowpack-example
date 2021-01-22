@@ -1,5 +1,6 @@
 
-import { atom, selector, useSetRecoilState} from 'recoil';
+import { atom, selector } from 'recoil';
+import useRecoilTrigger from '@hooks/useRecoilTrigger';
 import getPerson from '../../apis/person';
 
 const PREFIX = 'SELECTOR_PREFETCH';
@@ -25,11 +26,7 @@ const selectors = {
 // 캐싱된 select 캐시 새로고침용
 const trigger = {
   useRefreshPersonList() {
-    const setTrigger = useSetRecoilState(atoms.personListTriggerState);
-    return () => {
-      console.log('call trigger useRefreshPersonList');
-      setTrigger(requestID => requestID + 1);
-    };
+    return useRecoilTrigger(atoms.personListTriggerState);
   },
 };
 

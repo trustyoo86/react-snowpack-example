@@ -1,5 +1,6 @@
 
-import { atomFamily, selectorFamily, useSetRecoilState } from 'recoil';
+import { atomFamily, selectorFamily } from 'recoil';
+import useRecoilTrigger from '@hooks/useRecoilTrigger';
 import getPerson from '../../apis/person';
 
 const PREFIX = 'SELECTOR_FAMILY_PREFETCH';
@@ -27,11 +28,7 @@ const selectorFamilies = {
 // 캐싱된 selectFamily 캐시 새로고침용
 const trigger = {
   useRefreshUserInfo(name) {
-    const setTrigger = useSetRecoilState(atomFamilies.personNameState(name));
-    return () => {
-      console.log('call trigger ' + name);
-      setTrigger(requestID => requestID + 1);
-    };
+    return useRecoilTrigger(atomFamilies.personNameState(name));
   },
 };
 
