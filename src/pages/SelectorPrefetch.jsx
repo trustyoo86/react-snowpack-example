@@ -12,6 +12,8 @@ function SelectorPrefetch() {
     snapshot.getLoadable(selectorPrefetch.selectors.personListState);
   });
 
+  const onRefresh = selectorPrefetch.trigger.useRefreshPersonList();
+
   return (
     <PageHeader
       title="selector prefetch 예시"
@@ -19,6 +21,8 @@ function SelectorPrefetch() {
     >
       <Button onClick={() => onPrefetchSelector()}>셀렉터 prefetch 하기</Button>
       <Button onClick={() => setIsShowSelector(true)}>셀렉터 보여주기</Button>
+      <Button onClick={() => onRefresh()}>셀렉터 캐시 새로고침</Button>
+
       {
         isShowSelector && (
           <Suspense fallback={<div>로딩중</div>} >
