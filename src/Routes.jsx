@@ -6,6 +6,7 @@ import Profile from '@pages/Profile';
 import Todo from '@pages/Todo';
 import GithubStar from '@pages/GithubStar';
 import SelectorPrefetch from '@pages/SelectorPrefetch';
+import SelectorFamilyPrefetch from '@pages/SelectorFamilyPrefetch';
 
 const Routes = () => {
   return (
@@ -19,6 +20,9 @@ const Routes = () => {
         </Route>
         <Route path="/githubStar">
           <GithubStar />
+        </Route>
+        <Route path="/prefetch-trigger" >
+          <SelectorFamilyPrefetch />
         </Route>
         <Route path="/selector-prefetch">
           <SelectorPrefetch />

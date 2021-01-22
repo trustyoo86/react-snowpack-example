@@ -1,5 +1,6 @@
 
 import { selector } from 'recoil';
+import getPerson from '../../apis/person';
 
 const PREFIX = 'SELECTOR_PREFETCH';
 
@@ -16,13 +17,4 @@ const selectors = {
 export default {
   selectors,
 };
-
-const getPerson = name => new Promise((resolve) => {
-  const person = {
-    name,
-    age: name.length * 10,
-  };
-
-  setTimeout(() => resolve(person), 2000);
-});
 
