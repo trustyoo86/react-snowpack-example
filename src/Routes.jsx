@@ -5,6 +5,7 @@ import Home from '@pages/Home';
 import Profile from '@pages/Profile';
 import Todo from '@pages/Todo';
 import GithubStar from '@pages/GithubStar';
+import SelectorPrefetch from '@pages/SelectorPrefetch';
 
 const Routes = () => {
   return (
@@ -18,6 +19,9 @@ const Routes = () => {
         </Route>
         <Route path="/githubStar">
           <GithubStar />
+        </Route>
+        <Route path="/selector-prefetch">
+          <SelectorPrefetch />
         </Route>
         <Route path="/">
           <Home />

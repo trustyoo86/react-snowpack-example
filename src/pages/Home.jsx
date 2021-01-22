@@ -17,6 +17,7 @@ const Home = () => {
           <li><Link to="/profile">Github profile</Link></li>
           <li><Link to="/todo">TodoList using recoil</Link></li>
           <li><Link to="/githubStar">get githubStar using recoil</Link></li>
+          <li><Link to="/selector-prefetch">get selector prefetch using recoil</Link></li>
         </ul>
       </div>
     </>
