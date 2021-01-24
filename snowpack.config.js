@@ -11,9 +11,11 @@ module.exports = {
     /**
      * snowpack plugins
      */
+    '@snowpack/plugin-babel',
   ],
   install: [
     /* ... */
+    'react/jsx-runtime',
   ],
   /**
    * install options
@@ -67,6 +69,7 @@ module.exports = {
    * module resolve alias
    */
   alias: {
+    '@atoms': PATHS.ATOMS,
     '@components': PATHS.COMPONENTS,
     '@pages': PATHS.PAGES,
     '@recoil': PATHS.RECOIL,

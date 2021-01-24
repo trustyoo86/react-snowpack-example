@@ -1,4 +1,4 @@
-import React from 'react';
+import { Suspense } from 'react';
 import PropTypes from 'prop-types';
 
 withSuspense.propTypes = {
@@ -21,9 +21,9 @@ function withSuspense(WrappedComponent, FallbackComponent = null) {
     }
 
     return (
-      <React.Suspense fallback={FallbackComponent}>
+      <Suspense fallback={FallbackComponent}>
         <WrappedComponent {...rest} />
-      </React.Suspense>
+      </Suspense>
     );
   };
 

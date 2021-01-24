@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useRecoilValue } from 'recoil';
 import withSuspense from '@hoc/withSuspense';
