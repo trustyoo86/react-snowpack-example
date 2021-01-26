@@ -13,19 +13,17 @@ module.exports = {
      */
     '@snowpack/plugin-babel',
   ],
-  install: [
-    /* ... */
-    'react/jsx-runtime',
-  ],
-  /**
-   * install options
-   */
-  installOptions: {
-    // 소스맵
-    sourceMap: true,
-    // 트리쉐이킹 여부
-    treeshake: true,
+  // v3 - install에서 packageOptions로 변경
+  packageOptions: {
+    knownEntrypoints: [
+      'react/jsx-runtime',
+    ],
   },
+  // install - v2
+  // install: [
+  //   /* ... */
+  //   'react/jsx-runtime',
+  // ],
   /**
    * development options
    */
@@ -57,14 +55,18 @@ module.exports = {
     clean: true,
     // snowpack의 meta data 폴더
     metDir: '__snowpack__',
-    // sourcemap
-    sourceMaps: false,
-    // node_module등의 web module
-    webModulesUrl: 'web_modules',
+    // sourcemap - v3
+    sourcemap: true,
+    // sourcemap - v2
+    // sourceMaps: false,
+    // node_module등의 web module - v2
+    // webModulesUrl: 'web_modules',
+    metaUrlPath: 'web_modules',
   },
-  proxy: {
-    /* ... */
-  },
+  // v3 - proxy => routes로 변경
+  // routes: {
+  //   /* ... */
+  // },
   /**
    * module resolve alias
    */
@@ -81,5 +83,9 @@ module.exports = {
    */
   testOptions: {
     files: ['src/**/*.@(spec|test).*'],
+  },
+  // v3 - optimize option
+  optimize: {
+    treeshake: true,
   },
 };
